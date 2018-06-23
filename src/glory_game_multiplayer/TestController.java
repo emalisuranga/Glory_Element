@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -24,6 +25,9 @@ public class TestController {
     static Thread tread = new Thread();
     private double xOffset = 0;
     private double yOffset = 0;
+    
+    @FXML
+    private AnchorPane root;
       //@FXML
     //private TextField testText;
  public void loginButtonClicked(){
@@ -53,6 +57,8 @@ public class TestController {
                 stage.setY(event.getScreenY() - yOffset);
             }
         });
+//                AnchorPane pan = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
+//            root.getChildren().setAll(pan);
     }
     
 @FXML private javafx.scene.control.Button closeButton;
