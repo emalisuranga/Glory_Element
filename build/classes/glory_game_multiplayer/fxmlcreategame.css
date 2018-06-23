@@ -1,0 +1,14 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.pane{
+    -fx-background-image:url('backg.jpg');
+    -fx-background-size:cover;
+}
+.text{
+    -fx-background-color:black;
+}

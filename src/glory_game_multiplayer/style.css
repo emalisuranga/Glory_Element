@@ -1,0 +1,53 @@
+.button{
+    -fx-background-color: #66b3ff;
+    -fx-font-weight:bold;
+    -fx-font-size:16;
+    -fx-background-radius:22;
+    -fx-text-fill:white;
+}
+
+.button:hover{
+    -fx-background-color: white;
+    -fx-font-weight:bold;
+    -fx-font-size:16;
+    -fx-background-radius:22;
+    -fx-text-fill:#66b3ff;
+    -fx-border-color:#66b3ff;
+    -fx-border-radius:20;
+    -fx-border-width:3;
+
+}
+
+.button:active {
+    -fx-background-color: #3e8e41;
+    -fx-box-shadow: 0 5px #666;
+    -fx-transform: translateY(4px);
+  }
+ 
+.TableView{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+.table-view .column-header .label {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.root{
+    -fx-background-image:url('backg.jpg');
+    -fx-background-size:cover;
+}
+.pane{
+    -fx-background-image:url('oak.jpg');
+}

@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.pane{
+    -fx-background-image:url('Oak.jpg');
+    -fx-background-size:cover;
+}
