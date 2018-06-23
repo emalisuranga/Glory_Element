@@ -9,6 +9,7 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <jar href="Glory_Game_Multiplayer.jar" size="5900750" download="eager" />
 =======
 <<<<<<< HEAD
@@ -17,6 +18,9 @@
     <jar href="Glory_Game_Multiplayer.jar" size="5900500" download="eager" />
 >>>>>>> 4ceed5956d87db1c9ebe5a065b0c57942a03e149
 >>>>>>> 4d70961edc69a6e0002818f12623a48c14c183d2
+=======
+    <jar href="Glory_Game_Multiplayer.jar" size="5900554" download="eager" />
+>>>>>>> parent of 4ceed59... Switch Scrn update2
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Glory_Game_Multiplayer" >
