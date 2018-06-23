@@ -53,8 +53,12 @@
                </effect>
             </Label>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <Button fx:id="Player_back" layoutX="21.0" layoutY="450.0" mnemonicParsing="false" onAction="#Player_back_clicked" prefHeight="44.0" prefWidth="122.0" text="Cancel">
+=======
+            <Button fx:id="Player_back" layoutX="21.0" layoutY="450.0" mnemonicParsing="false" onAction="#close" prefHeight="44.0" prefWidth="122.0" text="Cancel">
+>>>>>>> parent of 4ceed59... Switch Scrn update2
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

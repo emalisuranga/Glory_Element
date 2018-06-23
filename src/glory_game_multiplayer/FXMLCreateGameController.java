@@ -6,7 +6,6 @@
 package glory_game_multiplayer;
 
 import java.io.IOException;
-import static java.lang.System.exit;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,6 +18,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -52,9 +53,16 @@ public class FXMLCreateGameController implements Initializable {
     private TableView<?> selected_players;
     @FXML
     private Button btn_request;
-    @FXML
-    private TextField field_name;
+    
     public String pname;
+    @FXML
+    private Label notReq;
+    @FXML
+    private Label yourname;
+    @FXML
+    private TextField game_server;
+    @FXML
+    private ComboBox<?> game_select;
 
     /**
      * Initializes the controller class.
@@ -101,11 +109,6 @@ public class FXMLCreateGameController implements Initializable {
         table_creategame.setItems(oblist1);
     }
 
-        public void close(){
-            
-        System.exit(0);
-        }
-
 //    @FXML
 //    private void sel_row(MouseEvent event) {
 //        try {
@@ -114,9 +117,8 @@ public class FXMLCreateGameController implements Initializable {
 //        } catch (Exception e) {
 //            System.err.println(e);
 //        }
-
     @FXML
-    private void btn_reqsend(ActionEvent event) {
+    private void btn_hostserver(ActionEvent event) {
     }
 
 }
