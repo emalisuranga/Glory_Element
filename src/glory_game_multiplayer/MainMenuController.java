@@ -69,6 +69,16 @@ public class MainMenuController implements Initializable {
 //    }
     @FXML
     private void btn_play_clicked(ActionEvent event) {
+//<<<<<<< HEAD
+        try {
+            Parent transferParent =FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
+            Scene transferScene = new Scene(transferParent);
+            //Stage window = Stage
+            
+        } catch (IOException e) {
+            
+        }
+//=======
 //        try {
 //            Parent transferParent =FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
 //            Scene transferScene = new Scene(transferParent);
@@ -77,6 +87,7 @@ public class MainMenuController implements Initializable {
 //        } catch (IOException e) {
 //            
 //        }
+//>>>>>>> 4ceed5956d87db1c9ebe5a065b0c57942a03e149
     }
 
     @FXML

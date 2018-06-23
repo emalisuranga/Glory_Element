@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -26,7 +27,14 @@ public class TestController {
     static Thread tread = new Thread();
     private double xOffset = 0;
     private double yOffset = 0;
+//<<<<<<< HEAD
+    
+    @FXML
+    private AnchorPane root;
+      //@FXML
+///=======
     //@FXML
+//>>>>>>> 4ceed5956d87db1c9ebe5a065b0c57942a03e149
     //private TextField testText;
 
     public void loginButtonClicked() {
@@ -35,6 +43,31 @@ public class TestController {
 
     @FXML
     void newPage(ActionEvent event) throws IOException {
+//<<<<<<< HEAD
+       Stage stage = new Stage(); 
+      Parent root = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
+      stage.initStyle(StageStyle.TRANSPARENT);
+      stage.setScene(new Scene(root));
+      stage.show();
+      
+              root.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        xOffset = event.getSceneX();
+                        yOffset = event.getSceneY();
+                    }
+                });
+        
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                stage.setX(event.getScreenX() - xOffset);
+                stage.setY(event.getScreenY() - yOffset);
+            }
+        });
+//                AnchorPane pan = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
+//            root.getChildren().setAll(pan);
+//=======
 //        Stage stage = new Stage();
 //        Parent root = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
 //        stage.initStyle(StageStyle.TRANSPARENT);
@@ -62,6 +95,7 @@ public class TestController {
 //                stage.setY(event.getScreenY() - yOffset);
 //            }
 //        });
+//>>>>>>> 4ceed5956d87db1c9ebe5a065b0c57942a03e149
     }
 
     @FXML
