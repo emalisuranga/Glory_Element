@@ -69,14 +69,14 @@ public class MainMenuController implements Initializable {
 //    }
     @FXML
     private void btn_play_clicked(ActionEvent event) {
-        try {
-            Parent transferParent =FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
-            Scene transferScene = new Scene(transferParent);
-            Stage window = Stage
-            
-        } catch (IOException e) {
-            
-        }
+//        try {
+//            Parent transferParent =FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
+//            Scene transferScene = new Scene(transferParent);
+//            Stage window = Stage
+//            
+//        } catch (IOException e) {
+//            
+//        }
     }
 
     @FXML
