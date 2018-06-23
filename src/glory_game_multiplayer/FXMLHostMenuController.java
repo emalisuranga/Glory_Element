@@ -15,9 +15,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -60,8 +63,12 @@ public class FXMLHostMenuController implements Initializable {
             String sql = "update MasterPool set online_status = 0  where `player_name` = '" + pname + "'";
             int res = stmt.executeUpdate(sql);
 
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-            host_menu.getChildren().setAll(pane);
+            Parent mainParent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+            Scene mainScene = new Scene(mainParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(mainScene);
+            window.show();
+            
         } catch (IOException e) {
         }
     }
@@ -69,8 +76,11 @@ public class FXMLHostMenuController implements Initializable {
     @FXML
     private void btn_create_clicked(ActionEvent event) throws IOException {
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLCreateGame.fxml"));
-            host_menu.getChildren().setAll(pane);
+            Parent mainParent = FXMLLoader.load(getClass().getResource("FXMLCreateGame.fxml"));
+            Scene mainScene = new Scene(mainParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(mainScene);
+            window.show();
         } catch (IOException e) {
         }
     }
@@ -78,8 +88,11 @@ public class FXMLHostMenuController implements Initializable {
     @FXML
     private void btn_join_clicked(ActionEvent event) throws IOException {
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLJoinGame.fxml"));
-            host_menu.getChildren().setAll(pane);
+            Parent mainParent = FXMLLoader.load(getClass().getResource("FXMLJoinGame.fxml"));
+            Scene mainScene = new Scene(mainParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(mainScene);
+            window.show();
         } catch (IOException e) {
         }
     }

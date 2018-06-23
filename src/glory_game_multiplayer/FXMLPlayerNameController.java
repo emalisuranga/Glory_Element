@@ -16,11 +16,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -40,11 +43,9 @@ public class FXMLPlayerNameController implements Initializable {
     @FXML
     private Label info;
 
-    AnchorPane root = new AnchorPane();
-    Scene scene = new Scene(root);
-    
+//    AnchorPane root = new AnchorPane();
+//    Scene scene = new Scene(root);
     public static String pname;
-     
 
     /**
      * Initializes the controller class.
@@ -54,10 +55,10 @@ public class FXMLPlayerNameController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         // TODO
     }
- 
+
     @FXML
     private void btn_enter_clicked(ActionEvent event) throws IOException, SQLException {
 
@@ -87,8 +88,11 @@ public class FXMLPlayerNameController implements Initializable {
                         String sql = "update MasterPool set online_status = 1  where `player_name` = '" + pname + "'";
                         stmt.executeUpdate(sql);
 
-                        AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
-                        player_name.getChildren().setAll(pane);
+                        Parent mainParent = FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
+                        Scene mainScene = new Scene(mainParent);
+                        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        window.setScene(mainScene);
+                        window.show();
 
                     }
 
@@ -104,8 +108,11 @@ public class FXMLPlayerNameController implements Initializable {
 
                     System.out.println("online");
 
-                    AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
-                    player_name.getChildren().setAll(pane);
+                    Parent mainParent = FXMLLoader.load(getClass().getResource("FXMLHostMenu.fxml"));
+                    Scene mainScene = new Scene(mainParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(mainScene);
+                    window.show();
 
                 }
             }
@@ -123,14 +130,15 @@ public class FXMLPlayerNameController implements Initializable {
             Statement stmt = connection.createStatement();
             String sql = "update MasterPool set online_status = 0  where `player_name` = '" + pname + "'";
             int res = stmt.executeUpdate(sql);
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLMainMenu.fxml"));
-            player_name.getChildren().setAll(pane);
+            Parent mainParent = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+            Scene mainScene = new Scene(mainParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(mainScene);
+            window.show();
         } catch (IOException e) {
         }
     }
+
     
-    public void close(){
-    System.exit(0);
-    }
 
 }

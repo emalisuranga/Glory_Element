@@ -13,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -22,20 +23,27 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class TestController {
+
     static Thread tread = new Thread();
     private double xOffset = 0;
     private double yOffset = 0;
+//<<<<<<< HEAD
     
     @FXML
     private AnchorPane root;
       //@FXML
+///=======
+    //@FXML
+//>>>>>>> 4ceed5956d87db1c9ebe5a065b0c57942a03e149
     //private TextField testText;
- public void loginButtonClicked(){
-   System.out.println("User");
-   }      
- 
-  @FXML
+
+    public void loginButtonClicked() {
+        System.out.println("User");
+    }
+
+    @FXML
     void newPage(ActionEvent event) throws IOException {
+//<<<<<<< HEAD
        Stage stage = new Stage(); 
       Parent root = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
       stage.initStyle(StageStyle.TRANSPARENT);
@@ -59,17 +67,47 @@ public class TestController {
         });
 //                AnchorPane pan = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
 //            root.getChildren().setAll(pan);
-    }
-    
-@FXML private javafx.scene.control.Button closeButton;
+//=======
+//        Stage stage = new Stage();
+//        Parent root = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
+//        stage.initStyle(StageStyle.TRANSPARENT);
+//        stage.setScene(new Scene(root));
+//        stage.show();
 
-@FXML
- public void closeButtonAction(){
-    // get a handle to the stage
-    Stage stage = (Stage) closeButton.getScene().getWindow();
-    // do what you have to do
-    stage.close();
-}
+        Parent mainParent = FXMLLoader.load(getClass().getResource("FXMLPlayerName.fxml"));
+        Scene mainScene = new Scene(mainParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(mainScene);
+        window.show();
+
+//        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//                xOffset = event.getSceneX();
+//                yOffset = event.getSceneY();
+//            }
+//        });
+
+//        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//                stage.setX(event.getScreenX() - xOffset);
+//                stage.setY(event.getScreenY() - yOffset);
+//            }
+//        });
+//>>>>>>> 4ceed5956d87db1c9ebe5a065b0c57942a03e149
+    }
+
+    @FXML
+    private javafx.scene.control.Button closeButton;
+
+    @FXML
+    public void closeButtonAction() {
+        // get a handle to the stage
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        // do what you have to do
+        stage.close();
+    }
 // @FXML
 //      public void timer() throws InterruptedException{
 //         for (int i = 60; i >= 0; i--) {
@@ -79,22 +117,23 @@ public class TestController {
 //             
 //         }
     // }
- @FXML
+
+    @FXML
     void newPage2(ActionEvent event) throws IOException {
-       Stage stage = new Stage(); 
-      Parent root = FXMLLoader.load(getClass().getResource("LeaderBoard/LeaderBoard.fxml"));
-      stage.initStyle(StageStyle.TRANSPARENT);
-      stage.setScene(new Scene(root));
-      stage.show();
-      
-              root.setOnMousePressed(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        xOffset = event.getSceneX();
-                        yOffset = event.getSceneY();
-                    }
-                });
-        
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("LeaderBoard/LeaderBoard.fxml"));
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(new Scene(root));
+        stage.show();
+
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+
         root.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
