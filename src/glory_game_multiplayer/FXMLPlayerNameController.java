@@ -139,6 +139,8 @@ public class FXMLPlayerNameController implements Initializable {
         }
     }
 
-    
+    public void close() {
+        System.exit(0);
+    }
 
 }
