@@ -29,7 +29,7 @@ public class Glory_Game_Multiplayer extends Application {
     private double yOffset = 0;
     @Override
     public void start(Stage stage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("glory_game_multiplayer/GameBoard/FXMLDocument.fxml"));
       stage.initStyle(StageStyle.TRANSPARENT);
       Scene scene = new Scene(root);
       stage.setScene(scene);   

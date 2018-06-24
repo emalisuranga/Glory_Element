@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="Glory_Game_Multiplayer.jar" size="6711357" download="eager" />
+=======
+    <jar href="Glory_Game_Multiplayer.jar" size="6711197" download="eager" />
+>>>>>>> 988b2978ec9107b4fce20b4c3a0298005eeffd2f
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Glory_Game_Multiplayer" >

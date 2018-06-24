@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package glory_game_multiplayer.gameboard;
+package glory_game_multiplayer.GameBoard;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -103,6 +106,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField txtTypedWord;
     
+        @FXML
+    private TextArea txtTimer;
+    
     String letters ="";
     
     @Override
@@ -144,5 +150,38 @@ public class FXMLDocumentController implements Initializable {
             txtTypedWord.setText("");
         }
         
+    }
+    
+    private void clockStart() {            
+		//final CountDownClock clock = new CountDownClock();
+		Task<Void> task = new Task<Void>() {
+			@Override
+			public Void call() throws Exception { 
+                            int countDownTime = 300;
+				while (countDownTime > 0) {
+					Platform.runLater(new Runnable() {
+						public void run() {
+							//txtTimer.setText(clock.getTimeLeft(countDownTime).toString());                                                       
+						}
+					});
+					countDownTime--;
+					/**
+					 * Check auto submit details
+					 */
+					//autoSubmit();
+					Thread.sleep(1000);
+				}
+				return null;
+			}
+		};
+		Thread th = new Thread(task);
+		th.setDaemon(true);
+		th.start();
+	}
+
+    private static class CountDownClock {
+
+        public CountDownClock() {
+        }
     }
 }
