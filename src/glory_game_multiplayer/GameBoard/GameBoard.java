@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package glory_game_multiplayer.GameBoard;
+package glory_game_multiplayer.gameboard;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
